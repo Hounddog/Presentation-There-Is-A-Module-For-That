@@ -36,25 +36,55 @@
     <!-- Any section element inside of this container is displayed as a slide -->
     <div class="slides">
         <section>
-            <h2>Continuous Integration</h2>
-                &amp;
             <h2>Continuous Deployment</h2>
         </section>
         <section>
-            <h2>
-                <a href="http://ocramius.github.com/" target="_blank" rel="me">Martin Shwalbe</a>
+
+             <h2>
+                <a href="http://hounddog.github.com/" target="_blank" rel="me">Martin Shwalbe</a>
             </h2>
-            <p class="fragment">
-                <span class="zf-color">Zf2</span> contributor
-            </p>
-            <p class="fragment">
-                <span class="zf-color">Modules</span> <strike>developer</strike> <span class="fragment">time waster</span>
-            </p>
-            <p class="fragment">
-                <a href="http://twitter.com/mshwalbe" target="_blank">@mshwalbe</a>
-                -
-                <a href="http://github.com/Hounddog" target="_blank">Hounddog</a>
-            </p>
+
+            <div >
+                <div style="float:right">
+                    <p style="text-align:left">
+                        <span class="zf-color" >Zf2</span> contributor
+                    </p>
+                    <p style="text-align:left">
+                        <span class="zf-color">Modules</span> developer</strike>
+                    </p>
+                    <p  style="text-align:left">
+                        <a href="http://twitter.com/mshwalbe" target="_blank">@mshwalbe</a>
+                        -
+                        <a href="http://github.com/Hounddog" target="_blank">Hounddog</a>
+                    </p>
+                </div>
+            <div>
+        </section>
+        <section>
+            <section>
+                <h2>Continuous Deployment</h2>
+                <div >
+                    <ul style="float:left">
+                        <li class="fragment" data-id="cd-ship-code">Ship new code as soon as it's ready<p>
+                        <li class="fragment" data-id="cd-code-inventory">Automation</li>
+                        <li class="fragment" data-id="cd-code-inventory">Reduce Code Inventory</li>
+                        <li class="fragment" data-id="cd-safety">Safety</li>
+                        <li class="fragment" data-id="cd-happy-customers">Happy Customers</li>
+                        <li class="fragment" data-id="cd-happy-devs">Happy Developers</li>
+                    </ul>
+                    <br style="clear:both"/>
+                    <div>
+                        <span class="fragment roll-in">
+                                <img src="/img/automate.jpg" width="120px" />
+                        </span>
+                        <img src="/img/warehouse2.jpg" width="120px" />
+                        <img src="/img/mrt.png" width="120px"/>
+                        <img src="/img/safety.gif" width="120px"/>
+                        <img src="/img/happy-customers.jpg" width="120px" />
+                        <img src="/img/happy-developer.gif" width="120px" />
+                    </div>
+                </div>
+            </section>
         </section>
         <section>
             <section>
@@ -91,48 +121,7 @@
                 <p>We are developing already for some time, implementing Code Coverage till 100% will take us at least 6 Months!</p>
             </section>
         </section>
-        <section>
-            <section>
-                <h2>Continuous Deployment</h2>
-                <ul style="float:left">
-                    <li class="fragment">Ship new code as soon as it's ready<p>
-                    <li class="fragment">Reduce Code Inventory</li>
-                    <li class="fragment">Safety</li>
-                </ul>
-                <br style="clear:both" :>
-                <h3 class="fragment" style="color:red">It is not a silver bullet!</h3>
-            </section>
-            <section>
-                <h2>Automation</h2>
-                <img src="/img/presentation_cd/automate.jpg" />
-            </section>
-            <section>
-                <h2>Reduces code inventory</h2>
-                <img src="/img/presentation_cd/warehouse2.jpg" />
-            </section>
-            <section>
-                <h2>Improves Confidence</h2>
-                <img src="/img/presentation_cd/mrt.png" />
-            </section>
-            <section>
-                <h2>Safety</h2>
-                <img src="/img/presentation_cd/safety.gif" />
-            </section>
-            <section>
-                <h2>Fast turnaround</h2>
-                <h3>Happy Customers</h3>
-                <img src="/img/presentation_cd/happy-customers.jpg" />
-            </section>
-            <section>
-                <h2>Happy Developers</h2>
-                <img src="/img/presentation_cd/happy-developer.gif" />
-            </section>
-            <section>
-                <h2>Available Tools?</h2>
-                <p>Jenkins, Bamboo</p>
-            </section>
 
-        </section>
         <section>
             <section>
                 <h2>Considerations</h2>
@@ -324,7 +313,14 @@
             </section>
             <section>
                 <h2>UI Upgrades</h2>
-                <p>Enable ui upgrades only through configuration Switches</p>
+                <p>Keep visible feature changes hidden until they are ready</p>
+<pre class="fragment"><code class="php" data-trim>
+if($config->feature) {
+  //Show some cool new stuff
+  } else {
+  //Show old boring stuff
+}
+</code></pre>
             </section>
             <section>
                 <h2>Database Upgrades</h2>
@@ -333,7 +329,7 @@
             </section>
             <section>
             	<h2>Database Upgrade</h2>
-            	<p class="fragment" style="text-decoration:line-through">Synchronize Database and code</p>
+            	<p class="fragment" style="text-decoration:line-through">Synchronize Database and Code on deployment</p>
             	<p class="fragment">Apply Non Destructive Upgrades</h2>
             </section>
         </section>
@@ -366,9 +362,22 @@
 					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
 					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
 					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
-					 { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
-				]
+					 { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: '//cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.10/socket.io.min.js', async: true },
+                    { src: 'plugin/multiplex/master.js', async: true },
+				],
+                multiplex: {
+                    // Example values. Generate your own.
+                    secret: '137078919967658684', // Obtained from the socket.io server. Gives this (the master) control of the presentation
+                    id: '64545f6ceef05c90', // Obtained from socket.io server
+                    url: 'revealjs.jit.su:80' // Location of socket.io server
+                },
 			});
+
+            Reveal.addEventListener( 'fragmentshown', function( event ) {
+                // event.fragment = the fragment DOM element
+                console.log(event.fragment.getAttribute('data-id'));
+            } );
 
 		</script>
 
