@@ -65,7 +65,7 @@
                 <h2>Continuous Deployment</h2>
                 <div >
                     <ul style="float:left">
-                        <li class="fragment" data-id="cd-ship-code">Ship new code as soon as it's ready<p>
+                        <li class="fragment" data-id="cd-ship-code">Ship new code as soon as it's ready</li>
                         <li class="fragment" data-id="cd-code-inventory">Automation</li>
                         <li class="fragment" data-id="cd-code-inventory">Reduce Code Inventory</li>
                         <li class="fragment" data-id="cd-safety">Safety</li>
@@ -74,16 +74,18 @@
                     </ul>
                     <br style="clear:both"/>
                     <div>
-                        <span class="fragment roll-in">
-                                <img src="/img/automate.jpg" width="120px" />
-                        </span>
-                        <img src="/img/warehouse2.jpg" width="120px" />
-                        <img src="/img/mrt.png" width="120px"/>
-                        <img src="/img/safety.gif" width="120px"/>
-                        <img src="/img/happy-customers.jpg" width="120px" />
-                        <img src="/img/happy-developer.gif" width="120px" />
+                        <img src="/img/automate.jpg" height="120px" />
+                        <img src="/img/warehouse2.jpg" height="120px" />
+                        <img src="/img/mrt.png" height="120px"/>
+                        <img src="/img/safety.gif" height="120px"/>
+                        <img src="/img/happy-customers.jpg" height="120px" />
+                        <img src="/img/happy-developer.gif" height="120px" />
                     </div>
                 </div>
+            </section>
+            <section>
+                <h2>Continuous Deployment Lifecycle</h2>
+                <img src="/img/cd-cycle.png" />
             </section>
         </section>
         <section>
@@ -94,31 +96,27 @@
                 <blockquote>
             </section>
             <section>
-                <h2>Testing</h2>
+                <h2>Advantages</h2>
+                <ul>
+                    <li class="fragment">Continously integrate new code with the existing code repository</li>
+                    <li class="fragment">All tests run at each integration cycle</li>
+                    <li class="fragment">Immidiate Feedback of code quality through Metrics</li>
+                    <li class="fragment">Constant availability of a deployable source</li>
+                    <li class="fragment">Increased Visibility</li>
+                </ul>
             </section>
+
             <section>
-                <h2>Available Tools</h2>
-                <p class="fragment">
-                    Travis
-                </p>
-                <p class="fragment">
-                    Bamboo
-                </p>
-                <p class="fragment">
-                    Jenkins
-                </p>
-                <p class="fragment">
-                    many more...
-                </p>
-            </section>
-             <section>
-                <h2>Requirements for successfull CI</h2>
-                <p>100% Code Coverage</p>
-                <p>100% Clean Code</p>
-            </section>
-            <section>
-                <h2>Is this guy Crazy?</h2>
-                <p>We are developing already for some time, implementing Code Coverage till 100% will take us at least 6 Months!</p>
+                <h2>Continuous Integration</h2>
+                <ul>
+                    <li>Continuous Integration without tests does not work</li>
+                    <li>Start developing tests</li>
+
+                        <ul>
+                            <li>Write tests for each new identified bug</li>
+                            <li>Develop tests for each new feature</li>
+                        </ul>
+                </ul>
             </section>
         </section>
 
@@ -134,13 +132,15 @@
                     <thead>
                         <tr>
                             <td>Development</td>
-                            <td>
+                            <td class="fragment fade-out">
                                 Release<br> Cut
                             </td>
-                            <td>Stage</td>
-                            <td>QA</td>
-                            <td>Fix Bugs</td>
-                            <td>Integrate Patches</td>
+                            <td class="fragment fade-out">Stage</td>
+
+                            <td class="fragment fade-out">QA</td>
+                            <td class="fragment fade-out">Fix Bugs</td>
+                            <td class="fragment fade-out">Integrate Patches</td>
+                             <td class="fragment fade-in">Automated QA</td>
                             <td>Release</td>
                         </tr>
                         <tr>
@@ -314,26 +314,159 @@
             <section>
                 <h2>UI Upgrades</h2>
                 <p>Keep visible feature changes hidden until they are ready</p>
+                <br />
 <pre class="fragment"><code class="php" data-trim>
-if($config->feature) {
+if($config.feature) {
   //Show some cool new stuff
-  } else {
+} else {
   //Show old boring stuff
 }
 </code></pre>
             </section>
             <section>
                 <h2>Database Upgrades</h2>
-                <p>Enable automatic upgrading of your database schema<p>
+                <p>Enable automatic upgrading of your database schema</p>
                 <img class="fragment" src="/img/scared-baby.jpg">
             </section>
             <section>
             	<h2>Database Upgrade</h2>
             	<p class="fragment" style="text-decoration:line-through">Synchronize Database and Code on deployment</p>
-            	<p class="fragment">Apply Non Destructive Upgrades</h2>
+            	<p class="fragment">Apply Non Destructive Upgrades</p>
+                <p class="fragment">Make Schema changes Downgradable</p>
+            </section>
+            <section>
+                <h2>Additions do not cause any problems</h2>
+                <img src="/img/thumbs-up.png">
+            </section>
+            <section>
+                <h2>working Environment</h2>
+                <div>
+                    <img src="/img/user-table.png" style="float:left" height="200px">
+                    <div class="double-arrow">
+                        <div class="left"></div>
+                        <div class="body">einfach pfeil von rechts nach links</div>
+                        <div class="right"></div>
+                    </div>
+                    <img src="/img/document-6.png" style="float:left" height="200px">
+                    <style type="text/css">
+                        .double-arrow {
+                            border:1px solid black;
+                            width:200px;
+                            height:100px;
+                            float:left;
+                        }
+                        .double-arrow .left,
+                        .double-arrow .body,
+                        .double-arrow .right {
+                            float:left;
+                        }
+                    </style>
+                </div>
+                <br style="clear:both" />
+                <img src="/img/happy-computer.gif" width="200px">
+            </section>
+            <section>
+                <h2>Destructive Database Upgrade</h2>
+                <div>
+                    <img class="fragment" src="/img/seperate-destructive.png" style="float:left" height="300px">
+                    <div class="double-arrow">
+                        <div class="left"></div>
+                        <div class="body">doppelpfeil hier rein</div>
+                        <div class="right"></div>
+                    </div>
+                    <img class="fragment"src="/img/document-6.png" style="float:left" height="200px">
+                    <style type="text/css">
+                        .double-arrow {
+                            border:1px solid black;
+                            width:200px;
+                            height:100px;
+                            float:left;
+                        }
+                        .double-arrow .left,
+                        .double-arrow .body,
+                        .double-arrow .right {
+                            float:left;
+                        }
+                    </style>
+                </div>
+                <br style="clear:both" />
+                <img class="fragment" src="/img/sick-computer.jpg" width="200px">
+            </section>
+            <section>
+                <h2>Unhappy Customer</h2>
+                <img src="/img/freddy-krueger.jpg" >
+            </section>
+            <section>
+                <h2>Destructive Database Upgrade</h2>
+                <p>Destructive changes need a bit more care, the degree of which depends on the degree of destruction involved</p>
+            </section>
+            <section>
+                <h2>working Environment</h2>
+                <div>
+                    <img src="/img/user-table.png" style="float:left" height="200px">
+                    <div class="double-arrow">
+                        <div class="left"></div>
+                        <div class="body">einfach pfeil von rechts nach links</div>
+                        <div class="right"></div>
+                    </div>
+                    <img src="/img/document-6.png" style="float:left" height="200px">
+                    <style type="text/css">
+                        .double-arrow {
+                            border:1px solid black;
+                            width:200px;
+                            height:100px;
+                            float:left;
+                        }
+                        .double-arrow .left,
+                        .double-arrow .body,
+                        .double-arrow .right {
+                            float:left;
+                        }
+                    </style>
+                </div>
+                <br style="clear:both" />
+                <img src="/img/happy-computer.gif" width="200px">
+            </section>
+            <section>
+                <h2>Database Upgrade</h2>
+                <p>Apply changes without breaking backwards compatibility</p>
+                <img src="/img/user-table.png" class="fragment fade-out">
+                <img src="/img/db-upgrade.jpg" class="fragment fade-in">
+                <br />
+                <img class="fragment fade-in" src="/img/happy-computer.gif" width="200px">
+            </section>
+            <section>
+                <h2>Database Upgrade</h2>
+                <p>Apply changes without breaking backwards compatibility</p>
+                <img src="/img/seperated-table.jpg">
+                <img src="/img/document-6.png">
+                <br />
+                <img src="/img/happy-computer.gif" width="200px">
             </section>
         </section>
-        <section>Questions?</section>
+        <section>
+            <h2>Available Tools</h2>
+            <p class="fragment">
+                Travis - continuous integration platform
+            </p>
+            <p class="fragment">
+                Bamboo - continuous integration & release management
+            </p>
+            <p class="fragment">
+                Jenkins - continuous integration server
+            </p>
+            <p class="fragment">
+                Live Rebel - ONE-Click app releases
+            </p>
+            <p class="fragment">
+                many more...
+            </p>
+        </section>
+
+        <section>
+            <h2>Thank you</h2>
+            <p>Questions?</p>
+        </section>
     </div>
 </div>
 
