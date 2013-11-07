@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Continuous Deployment By Martin shwalbe</title>
+		<title>There is a Module for that By Martin shwalbe</title>
 
 		<meta name="description" content="Implementing Continuous Integration and Continuous Deployment">
 		<meta name="author" content="Martin Shwalbe">
@@ -28,6 +28,51 @@
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
+        <link rel="stylesheet" href="css/style.css" />
+        <style type="text/css">
+        /* overrides */
+        /*body {
+        background: #040E27;
+        background: -moz-radial-gradient(center, circle cover, #555a5f 0%, #040E27 100%);
+        background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #555a5f), color-stop(100%, #040E27));
+        background: -webkit-radial-gradient(center, circle cover, #555a5f 0%, #040E27 100%);
+        background: -o-radial-gradient(center, circle cover, #555a5f 0%, #040E27 100%);
+        background: -ms-radial-gradient(center, circle cover, #555a5f 0%, #040E27 100%);
+        background: radial-gradient(center, circle cover, #555a5f 0%, #040E27 100%);
+        background-color: #040E27;
+        }*/
+
+        .zf-color {
+            color: #68B604;
+        }
+
+        .doctrine-color {
+            color: #FC6A31;
+        }
+
+        .doctrine-bg {
+            background-color: #040E27;
+        }
+
+        .reveal section img {
+            border: 0;
+            background: none;
+            box-shadow: 0 0 #000;
+        }
+
+        .reveal pre {
+            width: 100%;
+            font-size: 0.68em;
+        }
+
+        .reveal pre code {
+            max-height: 600px;
+        }
+
+        img.middle{
+            vertical-align:middle;
+        }
+    </style>
 	</head>
 
 	<body>
@@ -36,436 +81,236 @@
     <!-- Any section element inside of this container is displayed as a slide -->
     <div class="slides">
         <section>
-            <h2>Continuous Deployment</h2>
+            <h2>There is a module for that</h2>
         </section>
         <section>
-
-             <h2>
+            <h2>
                 <a href="http://hounddog.github.com/" target="_blank" rel="me">Martin Shwalbe</a>
             </h2>
-
-            <div >
-                <div style="float:right">
-                    <p style="text-align:left">
-                        <span class="zf-color" >Zf2</span> contributor
-                    </p>
-                    <p style="text-align:left">
-                        <span class="zf-color">Modules</span> developer</strike>
-                    </p>
-                    <p  style="text-align:left">
-                        <a href="http://twitter.com/mshwalbe" target="_blank">@mshwalbe</a>
-                        -
-                        <a href="http://github.com/Hounddog" target="_blank">Hounddog</a>
-                    </p>
-                </div>
-            <div>
+            <div style="float:right">
+                <p>
+                    <img src="./img/zf-logo.svg" alt="Zend Framework 2" height="32px" class="middle" /> Contributor
+                </p>
+                <p>
+                    <img src="./img/github.svg" alt="GitHub" height="38px" class="middle"/> Hounddog
+                </p>
+                <p>
+                    <img src="./img/twitter.svg" alt="Twitter"  height="32px" class="middle"/> @mshwalbe
+                </p>
+            </div>
         </section>
         <section>
             <section>
-                <h2>Continuous Deployment</h2>
+                <h2>what is a Module</h2>
                 <div >
-                    <ul style="float:left">
-                        <li class="fragment" data-id="cd-ship-code">Ship new code as soon as it's ready</li>
-                        <li class="fragment" data-id="cd-code-inventory">Automation</li>
-                        <li class="fragment" data-id="cd-code-inventory">Reduce Code Inventory</li>
-                        <li class="fragment" data-id="cd-safety">Safety</li>
-                        <li class="fragment" data-id="cd-happy-customers">Happy Customers</li>
-                        <li class="fragment" data-id="cd-happy-devs">Happy Developers</li>
-                    </ul>
-                    <br style="clear:both"/>
-                    <div>
-                        <img src="/img/automate.jpg" height="120px" />
-                        <img src="/img/warehouse2.jpg" height="120px" />
-                        <img src="/img/mrt.png" height="120px"/>
-                        <img src="/img/safety.gif" height="120px"/>
-                        <img src="/img/happy-customers.jpg" height="120px" />
-                        <img src="/img/happy-developer.gif" height="120px" />
-                    </div>
+                    list of what a module is
                 </div>
             </section>
             <section>
-                <h2>Continuous Deployment Lifecycle</h2>
-                <img src="/img/cd-cycle.png" />
+                <h2>What can Modules do?</h2>
+                <div> list of what a module can do</div>
             </section>
         </section>
         <section>
             <section>
-                <h2>Continuous Integration</h2>
-                <blockquote>
-                    "Continuous Integration is a software development practice where members of a team integrate their work frequently" --Martin Fowler
-                <blockquote>
+                <h2>modules.zendframework.com</h2>
             </section>
             <section>
-                <h2>Advantages</h2>
-                <ul>
-                    <li class="fragment">Continously integrate new code with the existing code repository</li>
-                    <li class="fragment">All tests run at each integration cycle</li>
-                    <li class="fragment">Immidiate Feedback of code quality through Metrics</li>
-                    <li class="fragment">Constant availability of a deployable source</li>
-                    <li class="fragment">Increased Visibility</li>
-                </ul>
+                <h2>Over 300 modules</h2>
             </section>
-
             <section>
-                <h2>Continuous Integration</h2>
-                <ul>
-                    <li>Continuous Integration without tests does not work</li>
-                    <li>Start developing tests</li>
-
-                        <ul>
-                            <li>Write tests for each new identified bug</li>
-                            <li>Develop tests for each new feature</li>
-                        </ul>
-                </ul>
+                <h2>ideas</h2>
+            </section>
+            <section>
+                <h2>We need you!</h2>
+            </section>
+            <section>
+                <h2>Please check modules.zendframework.com before writing a new Module!_</h2>
             </section>
         </section>
 
         <section>
             <section>
-                <h2>Considerations</h2>
+                <h2>Modules best practices</h2>
             </section>
             <section>
-                <h2>Traditional Release Cycles</h2>
-                <h3>Timeline</h3>
-                <h4>1-4 Weeks</h4>
-                <table cellspacing="0" class="trc">
-                    <thead>
-                        <tr>
-                            <td>Development</td>
-                            <td class="fragment fade-out">
-                                Release<br> Cut
-                            </td>
-                            <td class="fragment fade-out">Stage</td>
+                Keep the ``init()`` and ``onBootstrap()`` methods lightweight. Be conservative with the actions you perform in the init() and onBootstrap() methods of your Module class. These methods are run for every page request, and should not perform anything heavy. As a rule of thumb, registering event listeners is an appropriate task to perform in these methods. Such lightweight tasks will generally not have a measurable impact on the performance of your application, even with many modules enabled. It is considered bad practice to utilize these methods for setting up or configuring instances of application resources such as a database connection, application logger, or mailer. Tasks such as these are better served through the ServiceManager capabilities of Zend Framework 2.
+            </section>
+            <section>
+                <h2>Do not perform writes within a module.</h2>
+                <aside class="notes">
+                    Do not perform writes within a module. You should never code your module to perform or expect any writes within the module’s directory. Once installed, the files within a module’s directory should always match the distribution verbatim. Any user-provided configuration should be performed via overrides in the Application module or via application-level configuration files. Any other required filesystem writes should be performed in some writeable path that is outside of the module’s directory.
+                </aside>
+                
+            </section>
+            <section>
+                <h2>Use a vendor prefix for module names<h2>
+                <aside class="notes">
+                    Utilize a vendor prefix for module names. To avoid module naming conflicts, you are encouraged to prefix your module namespace with a vendor prefix. As an example, the (incomplete) developer tools module distributed by Zend is named “ZendDeveloperTools” instead of simply “DeveloperTools”
+                </aside>
+                
+            </section>
+            <section>
+                Allow to configure everything that needs to be configurable
 
-                            <td class="fragment fade-out">QA</td>
-                            <td class="fragment fade-out">Fix Bugs</td>
-                            <td class="fragment fade-out">Integrate Patches</td>
-                             <td class="fragment fade-in">Automated QA</td>
-                            <td>Release</td>
-                        </tr>
-                        <tr>
-                            <td><br /></td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class="right_arrow">
-                    <div class="dotted"></div>
-                    <div class="body"></div>
-                    <div class="arrow"></div>
-                </div>
-                <style type="text/css">
-                    .trc tbody td{
-                        border-right:4px solid red;
-                        height:80px;
-                    }
-                    .trc thead td {
-                        text-align: center;
-                        vertical-align: middle;
-                    }
-                    .trc hr {
-                        border:0;
-                        background-color: blue;
-                        height:5px;
-                        width:5px;
-                        float:left;
-                        margin:0;
-                        padding:0;
-                    }
+Modules are meant to be shared and reused by other people. And people don’t always have exactly the same needs as you are. Whenever a thing “could” be modified by other people, add options to allow to modify it. For instance, if your module generate some HTML page with some inline style that is copied from a CSS file shipped in the module… just set a way so that people can set the path to their own CSS file (this way they won’t need to manually tweak the CSS you ship in the module).
 
-                    .right_arrow {
-                        top:-60px;
-                        position:relative;
-                        height:50px;
-                        width:100%;
-                        border:5px solid black;
-                    }
-                    .right_arrow .arrow {
-                        border-color: transparent transparent transparent blue;
-                        border-style:solid;
-                        border-width:20px 0 25px 25px;
-                        width:0; height:0;
-                        float:left;
-                    }
-                    .right_arrow .body {
-                        float: left;
-                        margin-top:18px;
-                        height: 10px;
-                        width: 655px;
-                        background-color: blue;
-                    }
-                    .right_arrow .dotted {
-                        margin-top:18px;
-                        float: left;
-                        border-bottom:10px dashed blue;
-                        width:215px;
-                    }
-                </style>
-            </section>
-            <section>
-                <h2>Continuous Deployment Release Cycles</h2>
-                <h3>Timeline</h3>
-                <h4>5-10 minutes</h4>
-                <table cellspacing="0" class="trc">
-                    <thead>
-                        <tr>
-                            <td>Development</td>
-                            <td style="text-decoration:line-through">
-                                Release<br> Cut
-                            </td>
-                            <td style="text-decoration:line-through">Stage</td>
-                            <td>Automated QA testing and staging</td>
-                            <td style="text-decoration:line-through">Fix Bugs</td>
-                            <td style="text-decoration:line-through">Integrate Patches</td>
-                            <td>Release</td>
-                        </tr>
-                        <tr>
-                            <td><br /></td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class="right_arrow">
-                    <div class="dotted"></div>
-                    <div class="body"></div>
-                    <div class="arrow"></div>
-                </div>
-                <style type="text/css">
-                    .trc tbody td{
-                        border-right:4px solid red;
-                        height:80px;
-                    }
-                    .trc thead td {
-                        text-align: center;
-                        vertical-align: middle;
-                    }
-                    .trc hr {
-                        border:0;
-                        background-color: blue;
-                        height:5px;
-                        width:5px;
-                        float:left;
-                        margin:0;
-                        padding:0;
-                    }
+When you ship your module, you should ship two files into the config folder. One file called “module.config.php” that provides “standard” configuration and configuration that should not be modified by the user AND another file called “my_module.global.php.dist” that exposes all the options that can be overridable by the user (this file is typically copy/pasted to the config/autoload folder of your application).
 
-                    .right_arrow {
-                        top:-60px;
-                        position:relative;
-                        height:50px;
-                        width:100%;
-                        border:5px solid black;
-                    }
-                    .right_arrow .arrow {
-                        border-color: transparent transparent transparent blue;
-                        border-style:solid;
-                        border-width:20px 0 25px 25px;
-                        width:0; height:0;
-                        float:left;
-                    }
-                    .right_arrow .body {
-                        float: left;
-                        margin-top:18px;
-                        height: 10px;
-                        width: 655px;
-                        background-color: blue;
-                    }
-                    .right_arrow .dotted {
-                        margin-top:18px;
-                        float: left;
-                        border-bottom:10px dashed blue;
-                        width:215px;
-                    }
-                </style>
-            </section>
-        </section>
-        <section>
-            <section>
-                <h2>Strategies</h2>
+A great example of that is the ZfcUser config file. As you can see, pretty much everything can be overridden, so the module is really flexible.
             </section>
             <section>
-                <h2>Zero Downtime Deployment</h2>
-                <ul>
-                	<li class="fragment">Symlink production directory</li>
-                	<li>nodejs: switch port</li>
-                	<li>or any other method you can come up with</li>
-                </ul>
-            </section>
-            <section>
-                <h2>UI Upgrades</h2>
-                <p>Keep visible feature changes hidden until they are ready</p>
-                <br />
-<pre class="fragment"><code class="php" data-trim>
-if($config.feature) {
-  //Show some cool new stuff
-} else {
-  //Show old boring stuff
+                Set your hard dependencies in constructor, avoid initializers and setters/getters
+
+The service locator of Zend Framework 2 really allows to cleanly handle complex dependencies, mocking… it’s really a powerful tool that is not that hard to use once you understand it. However, ZF 2 shipped with something called initializers. I’m pretty sure you’ve encountered them already. For instance, they are ServiceLocatorAwareInterface, or EventManagerAwareInterface… Whenever a class implements those interfaces, the service manager will automatically inject (through setters) the dependencies.
+
+While this is nice, it suffers from one problem that can lead to a lot of pain and bad use from your module’s users. For instance, in ZfrRest, we have classes that are used to parse HTTP request/response object. All those parsers extends an abstract class called AbstractParser. You can see the class here.
+
+As an example, here is the constructor :
+
+public function __construct(DecoderPluginManager $pluginManager)
+{
+    $this->decoderPluginManager = $pluginManager;
 }
+
+Instead of the constructor, we could have written a setter/getter to set the DecoderPluginManager, and inject the dependency through the service manager or using an initializer. BUT this assumes that your user will effectively use the service manager to create your object.
+
+Until the day someone create the parser like this:
+
+$parser = new BodyParser();
+$parser->parse($request);
+
+And badaboom. He didn’t call setDecoderPluginManager nor didn’t create the instance through the service manager. The dependency is not set correctly and this code will throw an exception.
+
+BECAUSE the DecoderPluginManager is an essential dependency of this object (it cannot work without this dependency), just ask to set the dependency directly through the constructor. So that people can’t use your object badly. Even if they want to.
+            </section>
+            <section>
+                <h2>Reduce your closure usage</h2>
+<pre><code contenteditable>
+return array(
+  'service_manager' => array(
+    'factories' => array(
+      'MyModule\My\Service' => 'MyModule\Service\MyServiceFactory'
+    )
+  )
+);
 </code></pre>
+
+                <aside class="notes">
+                    It’s common usage in ZF 2 to handle dependencies through the use of closures as factories in the getServiceConfig of your Module.php class. Instead, you’d better use explicit class factories, and set define the factories in the module.config.php file (in the service_manager key). This is slightly more efficient (because closures are instantiated, it’s faster to create a string than a closure), allow you to cache config file (closure are not cacheable), and remove the unreadeable Module.php with tons of closures.
+                </aside>
+
+
             </section>
             <section>
-                <h2>Database Upgrades</h2>
-                <p>Enable automatic upgrading of your database schema</p>
-                <img class="fragment" src="/img/scared-baby.jpg">
+                Use service manager as much as possible to put dependencies
+
+This advice closely follows the one on “allow to configure everything”. Sometimes, people really want really weird things. Trust me. You sometimes ask yourself “why the hell do you want this feature ?”. But they want. Of course, you won’t add this feature to the core of your module because you still want to kick this guy’s ass for suggesting such a strange thing, but at least you must make it easy for him to override everything.
+
+And with ZF 2 architecture, this is really simple : create most of your objects through the service manager. For instance, in ZfrRest, we add some listeners that provide useful features in REST context. The first way to do it is simply this:
+
+public function onBootstrap(EventInterface $e)
+{
+    $application     = $e->getTarget();
+    $serviceManager  = $application->getServiceManager();
+    $eventManager    = $application->getEventManager();
+
+    $eventManager->attach(new ZfrRest\Mvc\HttpExceptionListener());
+}
+
+However, think about this strange guy who want to also send a mail to his grand-mother whenever an exception is thrown. How can he do it currently ? Well… he can modify your module code, but this is not really good as whenever he will update your module, he will need to make the changes again.
+
+Fortunately, using the Service Manager solves this:
+
+public function onBootstrap(EventInterface $e)
+{
+    $application     = $e->getTarget();
+    $serviceManager  = $application->getServiceManager();
+    $eventManager    = $application->getEventManager();
+
+    $eventManager->attach($serviceManager->get('ZfrRest\Mvc\HttpExceptionListener'));
+}
+
+Now, the listener is pulled from the service manager. Of course, ZfrRest has a default and sane implementation of this listener, by adding an invokable to the service manager config:
+
+// in the module.config.php
+return array(
+    'service_manager' => array(
+        'invokables' => array(
+           'ZfrRest\Mvc\HttpExceptionListener' => 'ZfrRest\Mvc\HttpExceptionListener'
+        )
+    )
+);
+
+Now, if someone want to override the listener, he just needs to override the invokables in his own config file:
+
+// in the module.config.php
+return array(
+    'service_manager' => array(
+        'invokables' => array(
+           'ZfrRest\Mvc\HttpExceptionListener' => 'MyModule\Mvc\SendBananaListener'
+        )
+    )
+);
+
             </section>
             <section>
-            	<h2>Database Upgrade</h2>
-            	<p class="fragment" style="text-decoration:line-through">Synchronize Database and Code on deployment</p>
-            	<p class="fragment">Apply Non Destructive Upgrades</p>
-                <p class="fragment">Make Schema changes Downgradable</p>
+                <h2>Write unit tests</h2>
             </section>
             <section>
-                <h2>Additions do not cause any problems</h2>
-                <img src="/img/thumbs-up.png">
+                <h2>Host your module on Packagist</h2>
             </section>
             <section>
-                <h2>working Environment</h2>
-                <div>
-                    <img src="/img/user-table.png" style="float:left" height="200px">
-                    <div class="double-arrow">
-                        <div class="left"></div>
-                        <div class="body">einfach pfeil von rechts nach links</div>
-                        <div class="right"></div>
-                    </div>
-                    <img src="/img/document-6.png" style="float:left" height="200px">
-                    <style type="text/css">
-                        .double-arrow {
-                            border:1px solid black;
-                            width:200px;
-                            height:100px;
-                            float:left;
-                        }
-                        .double-arrow .left,
-                        .double-arrow .body,
-                        .double-arrow .right {
-                            float:left;
-                        }
-                    </style>
-                </div>
-                <br style="clear:both" />
-                <img src="/img/happy-computer.gif" width="200px">
+                Only set dependencies on what you require
+
+Zend Framework 2 is a modular framework. This means that people don’t need to download the full framework to be able to use it. For instance, some people may be interested only about the filter and validator components (and using the Symfony 2 Mvc component). All of this thanks to Composer.
+
+Of course, people will be angry if using your module means downloading the full ZF 2 framework. This is why instead of setting the whole framework as a dependency, just set the specific components you need. For instance, let’s say that your module uses the ZF 2 InputFilter component, nothing else. Just replace this in the composer.json of your module :
+
+"require": {
+    "php": ">=5.3.3",
+    "zendframework/zendframework": "2.*"
+}
+
+by :
+
+"require": {
+    "php": ">=5.3.3",
+    "zendframework/zend-inputfilter": "2.*"
+}
+
+Now, it will download ONLY the Zend Input Filter (well, not exactly, because the InputFilter component itself has some other dependencies, but this is not your problem and this is handled by composer, because each ZF 2 component has its own composer.json file !).
+
+If you have any other advices, don’t hesitate !
             </section>
             <section>
-                <h2>Destructive Database Upgrade</h2>
-                <div>
-                    <img class="fragment" src="/img/seperate-destructive.png" style="float:left" height="300px">
-                    <div class="double-arrow">
-                        <div class="left"></div>
-                        <div class="body">doppelpfeil hier rein</div>
-                        <div class="right"></div>
-                    </div>
-                    <img class="fragment"src="/img/document-6.png" style="float:left" height="200px">
-                    <style type="text/css">
-                        .double-arrow {
-                            border:1px solid black;
-                            width:200px;
-                            height:100px;
-                            float:left;
-                        }
-                        .double-arrow .left,
-                        .double-arrow .body,
-                        .double-arrow .right {
-                            float:left;
-                        }
-                    </style>
-                </div>
-                <br style="clear:both" />
-                <img class="fragment" src="/img/sick-computer.jpg" width="200px">
-            </section>
-            <section>
-                <h2>Unhappy Customer</h2>
-                <img src="/img/freddy-krueger.jpg" >
-            </section>
-            <section>
-                <h2>Destructive Database Upgrade</h2>
-                <p>Destructive changes need a bit more care, the degree of which depends on the degree of destruction involved</p>
-            </section>
-            <section>
-                <h2>working Environment</h2>
-                <div>
-                    <img src="/img/user-table.png" style="float:left" height="200px">
-                    <div class="double-arrow">
-                        <div class="left"></div>
-                        <div class="body">einfach pfeil von rechts nach links</div>
-                        <div class="right"></div>
-                    </div>
-                    <img src="/img/document-6.png" style="float:left" height="200px">
-                    <style type="text/css">
-                        .double-arrow {
-                            border:1px solid black;
-                            width:200px;
-                            height:100px;
-                            float:left;
-                        }
-                        .double-arrow .left,
-                        .double-arrow .body,
-                        .double-arrow .right {
-                            float:left;
-                        }
-                    </style>
-                </div>
-                <br style="clear:both" />
-                <img src="/img/happy-computer.gif" width="200px">
-            </section>
-            <section>
-                <h2>Database Upgrade</h2>
-                <p>Apply changes without breaking backwards compatibility</p>
-                <img src="/img/user-table.png" class="fragment fade-out">
-                <img src="/img/db-upgrade.jpg" class="fragment fade-in">
-                <br />
-                <img class="fragment fade-in" src="/img/happy-computer.gif" width="200px">
-            </section>
-            <section>
-                <h2>Database Upgrade</h2>
-                <p>Apply changes without breaking backwards compatibility</p>
-                <img src="/img/seperated-table.jpg">
-                <img src="/img/document-6.png">
-                <br />
-                <img src="/img/happy-computer.gif" width="200px">
+                travis ci
             </section>
         </section>
         <section>
-            <h2>Available Tools</h2>
-            <p class="fragment">
-                Travis - continuous integration platform
-            </p>
-            <p class="fragment">
-                Bamboo - continuous integration & release management
-            </p>
-            <p class="fragment">
-                Jenkins - continuous integration server
-            </p>
-            <p class="fragment">
-                Live Rebel - ONE-Click app releases
-            </p>
-            <p class="fragment">
-                many more...
-            </p>
+            <section>
+                <h2>Customize Modules</h2>
+            </section>            
+        </section>
+        <section>
+            <section>
+                <h2>Performance Optimization</h2>
+            </section>            
         </section>
 
         <section>
             <h2>Thank you</h2>
-            <p>Questions?</p>
+            <div style="float:right">
+                <p>
+                    <img src="./img/zf-logo.svg" alt="Zend Framework 2" height="32px" class="middle" /> Contributor
+                </p>
+                <p>
+                    <img src="./img/github.svg" alt="GitHub" height="38px" class="middle"/> Hounddog
+                </p>
+                <p>
+                    <img src="./img/twitter.svg" alt="Twitter"  height="32px" class="middle"/> @mshwalbe
+                </p>
+            </div>
         </section>
     </div>
 </div>
