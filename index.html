@@ -100,41 +100,53 @@
             </div>
         </section>
         <section>
-            <section>
-                <h2>what is a Module</h2>
-                <div >
-                    list of what a module is
-                </div>
-            </section>
-            <section>
-                <h2>What can Modules do?</h2>
-                <div> list of what a module can do</div>
-            </section>
+            <h2>what is a Module</h2>
+            <div >
+                list of what a module is
+            </div>
         </section>
         <section>
-            <section>
-                <h2>modules.zendframework.com</h2>
-            </section>
-            <section>
-                <h2>Over 300 modules</h2>
-            </section>
-            <section>
-                <h2>ideas</h2>
-            </section>
-            <section>
-                <h2>We need you!</h2>
-            </section>
-            <section>
-                <h2>Please check modules.zendframework.com before writing a new Module!_</h2>
-            </section>
+            <h2>What can Modules do?</h2>
+            <div> list of what a module can do</div>
         </section>
-
         <section>
+            <h2>modules.zendframework.com</h2>
+        </section>
+        <section>
+            <img src="img/ZF2-modules.png" />
+        </section>
+        <section>
+            <h2>Currently over 300 modules</h2>
+        </section>
+        <section>
+            <h2>Future of modules.zendframework.com</h2>
+        </section>
+        <section>
+            <p>Real search engine<p/>
+        </section>
+        <section>
+            <p>Module Feedback</p>
+        </section>
+        <section>
+            <p>Rating of Modules</p>
+        </section>
+        <section>
+            <p>Tutorial Section</p>
+        </section>
+        <section>
+            <h2>We need you!</h2>
+        </section>
+        <section>
+            <p>Please check modules.zendframework.com before writing a new Module!</p>
+        </section>
             <section>
                 <h2>Modules best practices</h2>
             </section>
             <section>
-                Keep the ``init()`` and ``onBootstrap()`` methods lightweight. Be conservative with the actions you perform in the init() and onBootstrap() methods of your Module class. These methods are run for every page request, and should not perform anything heavy. As a rule of thumb, registering event listeners is an appropriate task to perform in these methods. Such lightweight tasks will generally not have a measurable impact on the performance of your application, even with many modules enabled. It is considered bad practice to utilize these methods for setting up or configuring instances of application resources such as a database connection, application logger, or mailer. Tasks such as these are better served through the ServiceManager capabilities of Zend Framework 2.
+                <p>Keep the ``init()`` and ``onBootstrap()`` methods lightweight.</p>
+                <aside class="notes">
+                 Be conservative with the actions you perform in the init() and onBootstrap() methods of your Module class. These methods are run for every page request, and should not perform anything heavy. As a rule of thumb, registering event listeners is an appropriate task to perform in these methods. Such lightweight tasks will generally not have a measurable impact on the performance of your application, even with many modules enabled. It is considered bad practice to utilize these methods for setting up or configuring instances of application resources such as a database connection, application logger, or mailer. Tasks such as these are better served through the ServiceManager capabilities of Zend Framework 2.
+                </aside>
             </section>
             <section>
                 <h2>Do not perform writes within a module.</h2>
@@ -151,13 +163,13 @@
                 
             </section>
             <section>
-                Allow to configure everything that needs to be configurable
-
+                <h2>Allow to configure everything that needs to be configurable<h2>
+<aside class="notes">
 Modules are meant to be shared and reused by other people. And people don’t always have exactly the same needs as you are. Whenever a thing “could” be modified by other people, add options to allow to modify it. For instance, if your module generate some HTML page with some inline style that is copied from a CSS file shipped in the module… just set a way so that people can set the path to their own CSS file (this way they won’t need to manually tweak the CSS you ship in the module).
 
 When you ship your module, you should ship two files into the config folder. One file called “module.config.php” that provides “standard” configuration and configuration that should not be modified by the user AND another file called “my_module.global.php.dist” that exposes all the options that can be overridable by the user (this file is typically copy/pasted to the config/autoload folder of your application).
 
-A great example of that is the ZfcUser config file. As you can see, pretty much everything can be overridden, so the module is really flexible.
+A great example of that is the ZfcUser config file. As you can see, pretty much everything can be overridden, so the module is really flexible.<aside/>
             </section>
             <section>
                 Set your hard dependencies in constructor, avoid initializers and setters/getters
@@ -258,46 +270,270 @@ return array(
                 <h2>Write unit tests</h2>
             </section>
             <section>
-                <h2>Host your module on Packagist</h2>
+                <h3>travis ci</h3>
+                <ul>
+                    <li>Create a .travis.yml file</li>
+                    <li>Enable Github hook to run tests automatically</li>
+                </ul>
             </section>
             <section>
-                Only set dependencies on what you require
+<pre><code contenteditable>language: php
+php:
+  - "5.3"
+before_script:
+- cd ..
+- git clone git://github.com/zendframework/ZendSkeletonApplication.git
+- cd ZendSkeletonApplication
+- php composer.phar self-update
+- php composer.phar install --dev
+- cp -r ../EdpGithub module/EdpGithub
+- cd module/EdpGithub
+- wget http://cs.sensiolabs.org/get/php-cs-fixer.phar
+script:
+  - phpunit
+  - php coverage-checker.php clover.xml 76
+  - output=
+      $(php php-cs-fixer.phar fix -v --dry-run --level=psr2 .); 
+      if [[ $output ]]; then while read -r line; 
+      do echo -e "\e[00;31m$line\e[00m"; 
+      done <<< "$output"; false; fi;
+</code></pre>
+            </section>
+            
+            
+<section>
+<h2>Custom Module</h2>
 
+<p>Config:</p>
+<pre><code contenteditable>
+'view_manager' => array(
+    'template_path_stack' => array(
+        __DIR__ . '/../view',
+    ),
+),
+</code></pre>
+<p>Folder Structure:</p>
+<pre><code contenteditable>
+view/
+    index/
+        index/
+            index.phtml //Overrides the Original index.phtml
+</code></pre>
+            </section>
+            <section>
+                <h2>Override a Controller/Service</h2>
+            </section>
+            <section>
+                 <p>Controllers and services should be registered with the servicemanager so they can be overriden by the key</p>
+            </section>
+            <section>
+                <h2>Original Module</h2>
+<pre><code contenteditable>
+'controllers' => array(
+    'invokables' => array(
+        'App\Ctrl\Index' => 'App\Controller\IndexController',
+    ),
+),
+</code></pre>
+</section>
+<section>
+<h2>Custom Module</h2>
+<pre><code contenteditable>
+'controllers' => array(
+    'invokables' => array(
+        'App\Ctrl\Index' => 'MyModule\Controller\IndexController',
+    ),
+),
+</code></pre>
+<aside class="notes">
+Just by assigning my Custom controller to the Key Application\Controller\Index i have now replaced it. Same goes for the services or anything else that was configured using the service configuration
+</aside>
+            </section>
+            <section>
+                <h2>Extending Forms in ZfcUser</h2>
+
+
+<pre><code>
+public function onBootstrap($e)
+{
+    $events = $e->getApplication()->getEventManager()->getSharedManager();
+    $events->attach('ZfcUser\Form\Register','init', function($e) {
+        $form = $e->getTarget();
+        // Do what you please with the form instance ($form)
+    });
+    $events->attach('ZfcUser\Form\RegisterFilter','init', function($e) {
+        $filter = $e->getTarget();
+        // Do what you please with the filter instance ($filter)
+    });
+}
+</code></pre>
+<aside class="notes">
+I am taking this as an example as there is a nice way of extending forms in ZfcUser just by using an event.
+
+Just place the following code as also explained in the wiki into your Module.php
+As you can see you can attach anything to the formobject here and modify it to do exactly what you require
+</aside>
+            </section>
+            <section>
+                <h2>Use Composer</h2>
+                <pre><code contenteditable>
+{
+    "name": "zf-module/my-module",
+    "type": "library",
+    "description": "Example Module",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "John Doe",
+            "email": "john@doe.com"
+        }
+    ],
+    "require": {
+        "php":                      ">=5.3.3",
+    }
+}
+</code></pre>
+            </section>
+            <section>
+                <h2>Only set required dependencies</h2>
+<aside class="notes">
 Zend Framework 2 is a modular framework. This means that people don’t need to download the full framework to be able to use it. For instance, some people may be interested only about the filter and validator components (and using the Symfony 2 Mvc component). All of this thanks to Composer.
 
 Of course, people will be angry if using your module means downloading the full ZF 2 framework. This is why instead of setting the whole framework as a dependency, just set the specific components you need. For instance, let’s say that your module uses the ZF 2 InputFilter component, nothing else. Just replace this in the composer.json of your module :
 
+Now, it will download ONLY the Zend Input Filter (well, not exactly, because the InputFilter component itself has some other dependencies, but this is not your problem and this is handled by composer, because each ZF 2 component has its own composer.json file !).
+
+If you have any other advices, don’t hesitate !
+</aside>
+        </section>
+        <section>
+            <p>Do not download the full ZF2 Framework</p>
+            <pre><code contenteditable>
 "require": {
     "php": ">=5.3.3",
     "zendframework/zendframework": "2.*"
 }
-
-by :
-
+</code></pre>
+<p> Only require the componentes you need</p>
+<pre><code contenteditable>
 "require": {
     "php": ">=5.3.3",
     "zendframework/zend-inputfilter": "2.*"
 }
+</code></pre>
+    </section>
 
-Now, it will download ONLY the Zend Input Filter (well, not exactly, because the InputFilter component itself has some other dependencies, but this is not your problem and this is handled by composer, because each ZF 2 component has its own composer.json file !).
 
-If you have any other advices, don’t hesitate !
             </section>
-            <section>
-                travis ci
-            </section>
-        </section>
-        <section>
+            
             <section>
                 <h2>Customize Modules</h2>
-            </section>            
+            </section>     
+        <section>
+                You can nearly override anything with in a module 
+<pre><code contenteditable>
+return array(
+    'modules' => array(
+        'OriginalModule',
+        'MyModule',//this will override OriginalModule with any custom configurations you require
+    ),
+    'module_listener_options' => array(
+        'config_glob_paths'    => array(
+            'config/autoload/{,*.}{global,local}.php',
+        ),
+        'module_paths' => array(
+            './module',
+            './vendor',
+        ),
+    ),
+);
+<aside class="notes">from views to controller over services and mappers
+
+Create your own module which can extend/modify the original module. All you need to do is register it after the original Module in application.config.php</aside>
+</code></pre>
+            </section>
+            <section>
+                <h2>Override a template</h2>
+            </section>
+            <section>
+                 <p>Create the same view structure as the OriginalModule and place your custom templates there. <p>
+            </section>
+            <section>
+<h2>Original Module</h2>
+<p>Config:</p>
+<pre><code contenteditable>
+'view_manager' => array(
+    'template_path_stack' => array(
+        __DIR__ . '/../view',
+    ),
+),
+</code></pre>
+<p>Folder Structure:</p>
+<pre><code contenteditable>
+view/
+    index/
+        index/
+            index.phtml
+</code></pre>
+</section>
+        <section>
+            <h2>Performance Optimization</h2>
+        </section>    
+        <section>
+            <h2>Generate Classmap</h2>
+<pre><code contenteditable>
+$ php path/to/zf2/bin/classmap_generator.php -w
+Creating class file map for library in 'project/library'...
+Wrote classmap file to 'project/library/autoload_classmap.php'
+</code></pre>
+        </section> 
+        <section>
+            <h2>Generated Classmap</h2>
+<pre><code contenteditable>// Generated by ZF2's ./bin/classmap_generator.php
+return array(
+    'Namespace\Module' => __DIR__ . '/Module.php',
+    'Namespace\Controller\IndexController' => 
+        __DIR__ . '/src/Namespace/Controller/IndexController.php',
+);
+</code></pre>
         </section>
         <section>
-            <section>
-                <h2>Performance Optimization</h2>
-            </section>            
+            <h2>Include Classmap in Module.php</h2>
+<pre><code contenteditable>
+public function getAutoloaderConfig()
+{
+    return array(
+        'Zend\Loader\ClassMapAutoloader' => array(
+            __DIR__ . '/autoload_classmap.php',
+        ),
+        'Zend\Loader\StandardAutoloader' => array(
+            'namespaces' => array(
+                __NAMESPACE__ => __DIR__ . '/src/' . __NAMESPACE__,
+            ),
+        ),
+    );
+}
+</code></pre>
+        </section> 
+        <section>
+            <h2>Generate Template Map</h2>
+<pre><code contenteditable>
+$ php path/to/zf2/bin/templatemap_generator.php -w
+Creating template file map for library in 'project/library'...
+Wrote templatemap file to 'project/library/template_map.php'
+</code></pre>
         </section>
-
+        <section>
+            <h2>Include Templatemap in Module config</h2>
+<pre><code contenteditable>
+'view_manager' => array(
+        'template_path_stack' => array(
+            __DIR__ . '/../view',
+        ),
+        'template_map' => include __DIR__  . '../template_map.php',
+),
+</code></pre>
+        </section> 
         <section>
             <h2>Thank you</h2>
             <div style="float:right">
